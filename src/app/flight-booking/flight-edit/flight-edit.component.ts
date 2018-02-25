@@ -18,7 +18,6 @@ export class FlightEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(p => {
-
       this.id = p['id'];
 
       this.flightService.findById(this.id)

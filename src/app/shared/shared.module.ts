@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common'
 import {CityPipe} from './pipes/city.pipe';
 import {FlightBookingComponent} from '../flight-booking/flight-booking.component';
@@ -16,7 +16,7 @@ import {SimpleAuthService} from './auth/simple-auth.service';
     CityPipe
   ],
   providers: [
-    {provide: AuthService, useClass: SimpleAuthService}
+    //{provide: AuthService, useClass: SimpleAuthService}
   ],
   exports: [
     CityPipe
@@ -25,4 +25,14 @@ import {SimpleAuthService} from './auth/simple-auth.service';
     FlightBookingComponent]*/
 
 })
-export class SharedModule { }
+
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      providers: [
+        {provide: AuthService, useClass: SimpleAuthService}
+      ],
+      ngModule: SharedModule
+    }
+  }
+}

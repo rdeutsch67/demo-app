@@ -30,6 +30,7 @@ const FLIGHT_BOOKING_ROUTES: Routes = [
     ]
   }
 ];
+
 export let FlightBookingRouterModule = RouterModule.forChild(FLIGHT_BOOKING_ROUTES);
 
 

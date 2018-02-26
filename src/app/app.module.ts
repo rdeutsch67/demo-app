@@ -5,8 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 //import { FlightBookingModule } from './flight-booking/flight-booking.module';
-import { RouterModule } from '@angular/router';
-import { AppRouterModule } from './app.routes';
+
+import {RouterModule} from '@angular/router';
+import {AppRouterModule, APP_ROUTES_MODULE_PROVIDER} from "./app.routes";
 //import {FlightSearchComponent} from './flight-booking/flight-search/flight-search.component';
 import {DateComponent} from './date/date.component';
 import {HomeComponent} from './home/home.component';
@@ -32,7 +33,13 @@ import {SharedModule} from './shared/shared.module';
     AppComponent,
     HomeComponent,
   ],
-  providers: [{provide: BASE_URL, useValue: 'http://www.angular.at'}],
+  providers: [
+    {provide: BASE_URL, useValue: 'http://www.angular.at'},
+    APP_ROUTES_MODULE_PROVIDER
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+

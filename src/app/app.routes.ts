@@ -1,5 +1,6 @@
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {HomeComponent} from './home/home.component';
+import {CustomPreloadingStrategy} from './shared/custom-preloading-strategy';
 
 export const APP_ROUTES: Routes = [
   {
@@ -31,4 +32,13 @@ export const APP_ROUTES: Routes = [
   }
 ];
 
-export const AppRouterModule = RouterModule.forRoot(APP_ROUTES);
+//export const AppRouterModule = RouterModule.forRoot(APP_ROUTES);
+
+/*export const AppRouterModule = RouterModule.forRoot(APP_ROUTES,
+  { preloadingStrategy: PreloadAllModules
+  });*/
+
+export const AppRouterModule = RouterModule.forRoot(APP_ROUTES, {
+  preloadingStrategy: CustomPreloadingStrategy });
+
+export const APP_ROUTES_MODULE_PROVIDER = [CustomPreloadingStrategy];

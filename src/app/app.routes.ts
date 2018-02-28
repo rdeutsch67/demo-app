@@ -15,28 +15,15 @@ export const APP_ROUTES: Routes = [
   {
     path: 'flight-booking',
     loadChildren: './flight-booking/flight-booking.module#FlightBookingModule',
-    // canLoad: [AuthLoadGuard]
+    data: {
+      preload: true
+    }
   },
-
-  /*{
-    path: 'flight-booking',
-    loadChildren: './flight-booking/flightbooking.module#FlightBookingModule'
-  },
-  {
-    path: 'passenger-search',
-    component: PassengerSearchComponent
-  },*/
   {
     path: '**',
     redirectTo: 'home'
   }
 ];
-
-//export const AppRouterModule = RouterModule.forRoot(APP_ROUTES);
-
-/*export const AppRouterModule = RouterModule.forRoot(APP_ROUTES,
-  { preloadingStrategy: PreloadAllModules
-  });*/
 
 export const AppRouterModule = RouterModule.forRoot(APP_ROUTES, {
   preloadingStrategy: CustomPreloadingStrategy });

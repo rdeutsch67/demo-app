@@ -3,12 +3,14 @@ import {PassengerSearchComponent} from './passenger-search/passenger-search.comp
 import {RouterModule, Routes} from '@angular/router';
 import {FlightBookingComponent} from './flight-booking.component';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
+import {AuthChildGuard} from '../shared/auth/auth.child.guard';
 
 const FLIGHT_BOOKING_ROUTES: Routes = [
   {
     //path: 'flight-booking',
     path: '',
     component: FlightBookingComponent,
+    canActivateChild: [AuthChildGuard],
     children: [
       {
         path: '',

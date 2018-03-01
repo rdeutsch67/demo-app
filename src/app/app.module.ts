@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 //import { FlightBookingModule } from './flight-booking/flight-booking.module';
-
+import { FlightHistoryComponent } from './flight-history/flight-history.component';
 import {RouterModule} from '@angular/router';
 import {AppRouterModule, APP_ROUTES_MODULE_PROVIDER} from "./app.routes";
 //import {FlightSearchComponent} from './flight-booking/flight-search/flight-search.component';
@@ -32,6 +32,7 @@ import {SharedModule} from './shared/shared.module';
   declarations: [
     AppComponent,
     HomeComponent,
+    FlightHistoryComponent
   ],
   providers: [
     {provide: BASE_URL, useValue: 'http://www.angular.at'},

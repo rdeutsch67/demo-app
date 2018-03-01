@@ -5,6 +5,7 @@ import {FlightBookingComponent} from '../flight-booking/flight-booking.component
 import {FormsModule} from '@angular/forms';
 import {AuthService} from './auth/auth.service';
 import {SimpleAuthService} from './auth/simple-auth.service';
+import {AuthChildGuard} from './auth/auth.child.guard';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -30,7 +31,8 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       providers: [
-        {provide: AuthService, useClass: SimpleAuthService}
+        {provide: AuthService, useClass: SimpleAuthService},
+        AuthChildGuard
       ],
       ngModule: SharedModule
     }

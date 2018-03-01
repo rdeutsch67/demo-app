@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {AuthService} from '../shared/auth/auth.service';
-import {ActivatedRoute} from '@angular/router';
+import { AuthService} from '../shared/auth/auth.service';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-home',

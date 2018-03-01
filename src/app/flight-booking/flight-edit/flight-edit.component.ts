@@ -15,6 +15,12 @@ export class FlightEditComponent implements ComponentWithCanDeactivate, OnInit {
   flight: Flight;
 
   constructor(private route: ActivatedRoute, private flightService: FlightService) {
+    route.params.subscribe(p => {
+      this.id = p['id'];
+    });
+    route.data.subscribe((data) => {
+      this.flight = data['flight'];
+    })
   }
 
   ngOnInit() {

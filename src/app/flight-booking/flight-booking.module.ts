@@ -11,6 +11,8 @@ import { FlightBookingRouterModule } from './flight-booking.routes';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { FlightService } from './services/flight.service';
 import {FlightBookingComponent} from './flight-booking.component';
+import {FlightResolver} from './services/flight.resolver';
+import {AuthGuard} from '../shared/auth/auth.guard';
 
 
 
@@ -29,7 +31,10 @@ import {FlightBookingComponent} from './flight-booking.component';
     PassengerSearchComponent,
     DateComponent
   ],
-  providers: [FlightService
+  providers: [
+    FlightService,
+    FlightResolver,
+    AuthGuard
   ],
   exports: [
     FlightSearchComponent,

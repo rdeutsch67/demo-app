@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Flight} from "../../entities/flight";
 import {FlightService} from "../services/flight.service";
+import {ComponentWithCanDeactivate} from '../../shared/deactivation/component-with-can-deactivate';
 
 @Component({
   selector: 'flight-edit',
   templateUrl: './flight-edit.component.html'
 })
 
-export class FlightEditComponent implements OnInit {
+export class FlightEditComponent implements ComponentWithCanDeactivate, OnInit {
 
   id: string;
   flight: Flight;
@@ -29,6 +30,23 @@ export class FlightEditComponent implements OnInit {
             console.debug('Fehler beim Laden', err);
           }
         );
+    });
+  }
+
+  exitWarning = {
+    show: false,
+    resolve: null
+  }
+
+  decide(decision: boolean) {
+    this.exitWarning.show = false;
+    this.exitWarning.resolve(decision);
+  }
+
+  canDeactivate() {
+    this.exitWarning.show = true;
+    return new Promise((resolve) => {
+      this.exitWarning.resolve = resolve;
     });
   }
 

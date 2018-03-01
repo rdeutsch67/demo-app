@@ -10,6 +10,7 @@ export class AuthChildGuard implements CanActivateChild {
 
   canActivateChild(childRoute: ActivatedRouteSnapshot,
                    state: RouterStateSnapshot): boolean {
+
     if (this.authService.isLoggedIn) {
       return true;
     }

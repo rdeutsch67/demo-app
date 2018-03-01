@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import {CustomPreloadingStrategy} from './shared/custom-preloading-strategy';
 import {FlightHistoryComponent} from './flight-history/flight-history.component';
 import {AuthChildGuard} from './shared/auth/auth.child.guard';
+import {AuthLoadGuard} from './shared/auth/auth.load.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -17,6 +18,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'flight-booking',
     canActivateChild: [AuthChildGuard],
+    canLoad: [AuthLoadGuard],  /* hiermit wird das verzögerte Laden des FlightBooking-Modules unterdrückt */
     loadChildren: './flight-booking/flight-booking.module#FlightBookingModule',
     data: {
       preload: true

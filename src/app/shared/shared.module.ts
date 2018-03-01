@@ -6,6 +6,8 @@ import {FormsModule} from '@angular/forms';
 import {AuthService} from './auth/auth.service';
 import {SimpleAuthService} from './auth/simple-auth.service';
 import {AuthChildGuard} from './auth/auth.child.guard';
+import {AuthLoadGuard} from './auth/auth.load.guard';
+import {LeaveComponentGuard} from './deactivation/leave-component-guard';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -32,7 +34,9 @@ export class SharedModule {
     return {
       providers: [
         {provide: AuthService, useClass: SimpleAuthService},
-        AuthChildGuard
+        AuthChildGuard,
+        AuthLoadGuard,
+        LeaveComponentGuard
       ],
       ngModule: SharedModule
     }

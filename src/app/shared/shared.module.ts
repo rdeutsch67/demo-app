@@ -8,6 +8,7 @@ import {SimpleAuthService} from './auth/simple-auth.service';
 import {AuthChildGuard} from './auth/auth.child.guard';
 import {AuthLoadGuard} from './auth/auth.load.guard';
 import {LeaveComponentGuard} from './deactivation/leave-component-guard';
+import {CityValidatorDirective} from './validation/city.validator';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -16,7 +17,8 @@ import {LeaveComponentGuard} from './deactivation/leave-component-guard';
     CommonModule
   ],
   declarations: [
-    CityPipe
+    CityPipe,
+    CityValidatorDirective
   ],
   providers: [
     //{provide: AuthService, useClass: SimpleAuthService}

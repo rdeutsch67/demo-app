@@ -1,1 +1,10 @@
-/** No CSS for this example */
+input.ng-invalid {
+  border-left-color: red;
+  border-left-style: solid;
+  border-left-width: 10px;
+}
+input.ng-valid {
+  border-left-color: green;
+  border-left-style: solid;
+  border-left-width: 5px;
+}

@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {Http} from '@angular/http';
 
+
 @Component({
   selector: 'flight-search',
   templateUrl: './flight-search.component.html',

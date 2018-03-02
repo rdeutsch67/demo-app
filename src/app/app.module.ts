@@ -16,15 +16,14 @@ import {FlightService} from './flight-booking/services/flight.service';
 import {OAuthModule, OAuthService} from 'angular-oauth2-oidc';
 import {BASE_URL} from './app.tokens';
 import {SharedModule} from './shared/shared.module';
-
-/* test */
-
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    FormsModule,
     SharedModule.forRoot(),
     AppRouterModule,
     OAuthModule.forRoot()

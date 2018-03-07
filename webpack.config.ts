@@ -51,7 +51,8 @@ module.exports = function (env) {
         ]
       }),
     ],
-    devtool: 'cheap-module-source-map'
+    //devtool: 'cheap-module-source-map'
+    devtool: "#inline-source-map",
   };
 
 };

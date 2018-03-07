@@ -3,42 +3,34 @@
 <form #f="ngForm">
 
   <div class="form-group">
+
     <label>Von:</label>
-    <input class="form-control"
-           [(ngModel)]="from"
-           required minlength="3" maxlength="30"
-           flightCity
-           name="from" />
+    <input
+      [(ngModel)]="from"
+      name="from"
+      class="form-control"
+      required
+      flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"
+      minlength="3"
+      maxlength="30">
+
+    <!--<input class="form-control"-->
+           <!--[(ngModel)]="from"-->
+           <!--required minlength="3" maxlength="30"-->
+           <!--flightCity-->
+           <!--name="from"/>-->
 
     <div *ngIf="f?.controls['from']?.hasError('flightCity')">
       Dieser Flughafen existiert nicht
     </div>
-  </div>
 
-  <!--<div class="form-group">
-    <label>Von:</label>
-    <input
-      name="from"
-      [(ngModel)]="from"
-      class="form-control"
-      required minlength="3" />
-
-    <div *ngIf="!f?.controls['from']?.valid">
-      Es liegen Validierungsfehler für diese Eingabe vor.
-    </div>
-    <div *ngIf="f?.controls['from']?.hasError('required')">
-      Dieses Feld ist ein Pflichtfeld.
-    </div>
-    <div *ngIf="f?.controls['from']?.hasError('minlength')">
-      Erfassen Sie bitte min. 3 Zeichen.
-    </div>&ndash;&gt;
-  </div>
--->
-
-  <div class="form-group">
     <label>To</label>
-    <input class="form-control" [(ngModel)]="to" name="to" flightE2eLocator="to">
+    <input class="form-control"
+           [(ngModel)]="to"
+           name="to">
   </div>
+
+
 
   <div class="form-group">
     <button

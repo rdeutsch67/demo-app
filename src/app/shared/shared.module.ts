@@ -24,7 +24,8 @@ import {CityValidatorDirective} from './validation/city.validator';
     //{provide: AuthService, useClass: SimpleAuthService}
   ],
   exports: [
-    CityPipe
+    CityPipe,
+    CityValidatorDirective
   ]/*,
   entryComponents: [
     FlightBookingComponent]*/

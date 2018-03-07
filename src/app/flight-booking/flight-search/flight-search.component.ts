@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {Http} from '@angular/http';
-
+import { SharedModule} from '../../shared/shared.module';
 
 @Component({
   selector: 'flight-search',

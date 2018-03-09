@@ -9,6 +9,8 @@ import {AuthChildGuard} from './auth/auth.child.guard';
 import {AuthLoadGuard} from './auth/auth.load.guard';
 import {LeaveComponentGuard} from './deactivation/leave-component-guard';
 import {CityValidatorDirective} from './validation/city.validator';
+import {AsyncCityValidatorDirective} from './validation/city.async.validator';
+import {ValidationErrorsComponent} from './validation/validation-errors.component';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -18,14 +20,18 @@ import {CityValidatorDirective} from './validation/city.validator';
   ],
   declarations: [
     CityPipe,
-    CityValidatorDirective
+    CityValidatorDirective,
+    AsyncCityValidatorDirective,
+    ValidationErrorsComponent
   ],
   providers: [
     //{provide: AuthService, useClass: SimpleAuthService}
   ],
   exports: [
     CityPipe,
-    CityValidatorDirective
+    CityValidatorDirective,
+    AsyncCityValidatorDirective,
+    ValidationErrorsComponent
   ]/*,
   entryComponents: [
     FlightBookingComponent]*/

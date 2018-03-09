@@ -11,8 +11,11 @@
       class="form-control"
       required
       flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"
+      flightCityAsync
       minlength="3"
       maxlength="30">
+
+
 
     <!--<input class="form-control"-->
            <!--[(ngModel)]="from"-->
@@ -20,16 +23,65 @@
            <!--flightCity-->
            <!--name="from"/>-->
 
-    <div *ngIf="f?.controls['from']?.hasError('flightCity')">
+    <!--<div *ngIf="f?.form.get('from')?.hasError('flightcity')">-->
+      <!--Diese Stadt wird nicht angeflogen.-->
+    <!--</div>-->
+
+    <div *ngIf="f?.controls['from']?.hasError('flightCityAsync')">
       Dieser Flughafen existiert nicht
     </div>
 
-    <label>To</label>
-    <input class="form-control"
-           [(ngModel)]="to"
-           name="to">
+    <!--<div *ngIf="f?.controls['from'].pending">-->
+      <!--Validierung wird ausgeführt!-->
+    <!--</div>-->
+
+    <!--<div *ngIf="!f?.controls['from'].pending && !f?.controls['from'].valid">-->
+      <!--Es liegen Fehler vor-->
+    <!--</div>-->
+
   </div>
 
+  <div class="form-group">
+    <label>Nach</label>
+    <input class="form-control" [(ngModel)]="to" name="to" required minlength="3"
+           flightCity="Graz,Hamburg">
+
+    <flight-validation-errors [errors]="f?.controls['to']?.errors">
+    </flight-validation-errors>
+  </div>
+
+  <div class="form-group">
+    <label>Nonstop
+      <input
+        type="checkbox"
+        class="checkbox"
+        name="nonstop"
+        [(ngModel)]="nonstop">
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>Flight Class</label>
+
+    <div *ngFor="let c of flightClasses">
+      <label>
+        <input
+          type="radio"
+          name="flightClass"
+          [(ngModel)]="flightClass"
+          [value]="c">
+        {{c.name}}
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Luggage</label>
+
+    <select [(ngModel)]="luggage" name="luggage">
+      <option *ngFor="let l of luggageOptions" [ngValue]="l">{{l.name}}</option>
+    </select>
+  </div>
 
 
   <div class="form-group">

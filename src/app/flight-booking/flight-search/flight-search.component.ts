@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {Http} from '@angular/http';
 import { SharedModule} from '../../shared/shared.module';
+import {FlightClass, LuggageOption} from './flight-request';
 
 @Component({
   selector: 'flight-search',
@@ -19,6 +20,9 @@ export class FlightSearchComponent {
   to = 'Graz';
   flights: Array<Flight> = [];
   selectedFlight: Flight;
+  flightClass: FlightClass;
+  nonstop: boolean;
+  luggage: LuggageOption;
 
   basket: object = {
     "3": true,
@@ -26,9 +30,28 @@ export class FlightSearchComponent {
     "5": true
   };
 
+  public luggageOptions: Array<LuggageOption>;
+  public flightClasses: Array<FlightClass>;
+
   public myDate: string = (new Date()).toISOString();
 
   constructor(private http: Http) {
+  }
+
+  ngOnInit() {
+    this.luggageOptions = [
+      { id: 0, name: 'No luggage' },
+      { id: 1, name: '1 piece of luggage' },
+      { id: 2, name: '2 pieces of luggage' }
+    ];
+
+    this.flightClasses = [
+      { id: 1, name: '1st Class' },
+      { id: 2, name: 'Business Class' },
+      { id: 3, name: 'Economy Class' }
+    ];
+
+
   }
 
   // function showResponse(resp: Response){

@@ -50,8 +50,6 @@ export class FlightSearchComponent {
       { id: 2, name: 'Business Class' },
       { id: 3, name: 'Economy Class' }
     ];
-
-
   }
 
   // function showResponse(resp: Response){

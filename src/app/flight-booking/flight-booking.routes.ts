@@ -1,4 +1,5 @@
 import {FlightSearchComponent} from './flight-search/flight-search.component';
+import {FlightSearchDetailComponent} from './flight-search-detail/flight-search-detail.component';
 import {PassengerSearchComponent} from './passenger-search/passenger-search.component';
 import {RouterModule, Routes} from '@angular/router';
 import {FlightBookingComponent} from './flight-booking.component';
@@ -7,6 +8,7 @@ import {AuthChildGuard} from '../shared/auth/auth.child.guard';
 import {LeaveComponentGuard} from '../shared/deactivation/leave-component-guard';
 import {FlightResolver} from './services/flight.resolver';
 import {AuthGuard} from '../shared/auth/auth.guard';
+
 
 const FLIGHT_BOOKING_ROUTES: Routes = [
   {
@@ -23,6 +25,10 @@ const FLIGHT_BOOKING_ROUTES: Routes = [
       {
         path: 'flight-search',
         component: FlightSearchComponent
+      },
+      {
+        path: 'flight-search-detail',
+        component: FlightSearchDetailComponent
       },
       {
         path: 'passenger-search',

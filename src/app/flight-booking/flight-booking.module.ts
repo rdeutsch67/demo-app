@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
+import {FlightSearchDetailComponent} from './flight-search-detail/flight-search-detail.component';
 import { FlightCardComponent } from './flight-card/flight-card.component';
 import { PassengerSearchComponent } from './passenger-search/passenger-search.component';
 import { DateComponent} from '../date/date.component';
@@ -14,8 +15,6 @@ import {FlightBookingComponent} from './flight-booking.component';
 import {FlightResolver} from './services/flight.resolver';
 import {AuthGuard} from '../shared/auth/auth.guard';
 
-
-
 @NgModule({
   imports: [
     FormsModule,
@@ -25,6 +24,7 @@ import {AuthGuard} from '../shared/auth/auth.guard';
   ],
   declarations: [
     FlightSearchComponent,
+    FlightSearchDetailComponent,
     FlightCardComponent,
     FlightEditComponent,
     FlightBookingComponent,
@@ -37,10 +37,10 @@ import {AuthGuard} from '../shared/auth/auth.guard';
     AuthGuard
   ],
   exports: [
-    FlightSearchComponent,
-    PassengerSearchComponent,
-    //SharedModule,
-    DateComponent
+    //FlightSearchComponent,
+    //FlightSearchDetailComponent,
+    //PassengerSearchComponent,
+    //DateComponent
   ]
 })
 export class FlightBookingModule { }

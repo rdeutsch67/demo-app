@@ -10,6 +10,8 @@ import {LeaveComponentGuard} from './deactivation/leave-component-guard';
 import {CityValidatorDirective} from './validation/city.validator';
 import {AsyncCityValidatorDirective} from './validation/city.async.validator';
 import {ValidationErrorsComponent} from './validation/validation-errors.component';
+import {RoundTripDirective} from './validation/roundtrip.validator';
+import {CityReactiveValidatorDirective} from './validation/city-reactive.validator';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -20,8 +22,10 @@ import {ValidationErrorsComponent} from './validation/validation-errors.componen
   declarations: [
     CityPipe,
     CityValidatorDirective,
-    AsyncCityValidatorDirective,
-    ValidationErrorsComponent
+    //AsyncCityValidatorDirective,
+    ValidationErrorsComponent,
+    RoundTripDirective,
+    CityReactiveValidatorDirective
   ],
   providers: [
     //{provide: AuthService, useClass: SimpleAuthService}
@@ -29,8 +33,10 @@ import {ValidationErrorsComponent} from './validation/validation-errors.componen
   exports: [
     CityPipe,
     CityValidatorDirective,
-    AsyncCityValidatorDirective,
-    ValidationErrorsComponent
+    //AsyncCityValidatorDirective,
+    ValidationErrorsComponent,
+    RoundTripDirective,
+    CityReactiveValidatorDirective
   ]/*,
   entryComponents: [
     FlightBookingComponent]*/

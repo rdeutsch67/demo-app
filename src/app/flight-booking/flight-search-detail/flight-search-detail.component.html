@@ -2,7 +2,7 @@
 
 <form #f="ngForm">
 
-  <div ngModelGroup="route">
+  <div ngModelGroup="route" flightRoundTrip>
 
     <div *ngIf="!f?.controls['route']?.valid">
       Error in route
@@ -14,34 +14,70 @@
              type="text"
              name="from"
              [(ngModel)]="from"
-             flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"
+             flightCity="Hamburg,Wien,Graz,Frankfurt,Luxemburg,Luxembourg"
              required>
 
       <div *ngIf="!f?.controls['route']?.controls['from']?.valid">
-        Required
+        Mussfeld!
       </div>
+
+      <div *ngIf="f?.controls['route']?.hasError('round-trip')">
+        Rund-Flüge sind nicht möglich.
+      </div>
+
     </div>
+
 
     <div class="form-group">
       <label>To</label>
       <input class="form-control"
              name="to"
              [(ngModel)]="to"
-             flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"
              required>
     </div>
 
   </div>
 
-  <div class="form-group">
-    <label>Nonstop
-      <input
-        type="checkbox"
-        class="checkbox"
-        name="nonstop"
-        [(ngModel)]="nonstop">
-    </label>
-  </div>
+  <!--<div ngModelGroup="route">>-->
+
+    <!--<div *ngIf="!f?.controls['route']?.valid">-->
+      <!--Error in route-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label>From</label>-->
+      <!--<input class="form-control"-->
+             <!--type="text"-->
+             <!--name="from"-->
+             <!--[(ngModel)]="from"-->
+             <!--flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"-->
+             <!--required>-->
+
+      <!--<div *ngIf="!f?.controls['route']?.controls['from']?.valid">-->
+        <!--Required-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+      <!--<label>To</label>-->
+      <!--<input class="form-control"-->
+             <!--name="to"-->
+             <!--[(ngModel)]="to"-->
+             <!--flightCity="Graz,München,Hamburg,Frankfurt,Zürich,Wien"-->
+             <!--required>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <!--<div class="form-group">-->
+    <!--<label>Nonstop-->
+      <!--<input-->
+        <!--type="checkbox"-->
+        <!--class="checkbox"-->
+        <!--name="nonstop"-->
+        <!--[(ngModel)]="nonstop">-->
+    <!--</label>-->
+  <!--</div>-->
 
   <div class="form-group">
     <label>Flight Class</label>

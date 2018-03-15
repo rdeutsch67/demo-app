@@ -15,6 +15,7 @@ import { FlightBookingComponent} from './flight-booking.component';
 import { FlightResolver} from './services/flight.resolver';
 import { AuthGuard} from '../shared/auth/auth.guard';
 import { FlightSearchReactiveComponent} from './flight-search-reactive/flight-search-reactive.component';
+import {FlightSearchMultistopComponent} from './flight-search-multistop/flight-search-multistop.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { FlightSearchReactiveComponent} from './flight-search-reactive/flight-se
     FlightEditComponent,
     FlightBookingComponent,
     FlightSearchReactiveComponent,
+    FlightSearchMultistopComponent,
     PassengerSearchComponent,
     DateComponent
   ],

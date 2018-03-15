@@ -49,7 +49,7 @@ export class CityReactiveAsyncValidator {
             cityAsync: true
           });
         },
-        3000
+        300
       );
     });
   }

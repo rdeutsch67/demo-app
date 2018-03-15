@@ -12,6 +12,9 @@ import {AsyncCityValidatorDirective} from './validation/city.async.validator';
 import {ValidationErrorsComponent} from './validation/validation-errors.component';
 import {RoundTripDirective} from './validation/roundtrip.validator';
 import {CityReactiveValidatorDirective} from './validation/city-reactive.validator';
+import {MultistopValidator} from './validation/multistop-validator';
+import {DateValueAccessorDirective} from './date/date-value.accessor';
+import {DateControlComponent} from './date/date.control';
 /*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
@@ -25,7 +28,10 @@ import {CityReactiveValidatorDirective} from './validation/city-reactive.validat
     //AsyncCityValidatorDirective,
     ValidationErrorsComponent,
     RoundTripDirective,
-    CityReactiveValidatorDirective
+    CityReactiveValidatorDirective,
+    DateValueAccessorDirective,
+    DateValueAccessorDirective,
+    DateControlComponent
   ],
   providers: [
     //{provide: AuthService, useClass: SimpleAuthService}
@@ -36,7 +42,9 @@ import {CityReactiveValidatorDirective} from './validation/city-reactive.validat
     //AsyncCityValidatorDirective,
     ValidationErrorsComponent,
     RoundTripDirective,
-    CityReactiveValidatorDirective
+    CityReactiveValidatorDirective,
+    DateValueAccessorDirective,
+    DateControlComponent
   ]/*,
   entryComponents: [
     FlightBookingComponent]*/

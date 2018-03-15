@@ -1,4 +1,4 @@
-<h1>Flight Search (Reactive)</h1>
+<h1>Flight Search (Multistop)</h1>
 
 <form [formGroup]="filter">
 
@@ -40,6 +40,30 @@
     <input class="form-control" formControlName="to" name="to">
   </div>
 
+  <!--<h2>Dynamisches Formular für Von->Bis-Auswahl</h2>-->
+  <!--<div *ngFor="let item of formDesc">-->
+    <!--<label>{{item.label}}</label>-->
+    <!--<input [formControlName]="item.name" class="form-control">-->
+  <!--</div>-->
+
+  <div formArrayName="stopovers">
+    <div *ngFor="let stopover of filter.get('stopovers').controls; let i = index">
+      <div [formGroupName]="i" class="panel panel-default" >
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Aufenthalt in</label>
+            <input class="form-control" formControlName="city">
+          </div>
+          <div class="form-group">
+            <label>Dauer in Tagen</label>
+            <input class="form-control" formControlName="duration">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="form-group">
     <button
       class="btn btn-primary"
@@ -47,8 +71,33 @@
       [disabled]="!filter.valid"
       (click)="search()">Search
     </button>
+
+    <button
+      class="btn btn-primary"
+      name="btnAddStopover"
+      (click)="addStopover()">Add Stopover
+    </button>
+
+    <button
+      class="btn btn-primary"
+      name="btnRemoveStopover"
+      (click)="removeStopover()">Remove Stopover
+    </button>
   </div>
 
+
+  <div [formGroup]="myGroup">
+    <input formControlName="firstName">
+    <input [(ngModel)]="showMoreControls" [ngModelOptions]="{standalone: true}">
+  </div>
+
+
+  <div *ngIf="!filter.controls['stopovers'].valid">
+    Es sind Fehler aufgetreten.
+  </div>
+  <div *ngIf="filter.controls['stopovers'].hasError('multistop')">
+    Rundflüge sind nicht erlaubt.
+  </div>
 
   <table class="table table-striped">
     <tr *ngFor="let flight of flights"

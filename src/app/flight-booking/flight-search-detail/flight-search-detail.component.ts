@@ -16,6 +16,7 @@ export class FlightSearchDetailComponent {
   to = 'Graz';
   flights: Array<Flight> = [];
   selectedFlight: Flight;
+  date: string = (new Date()).toISOString();
 
   basket: object = {
     "3": true,

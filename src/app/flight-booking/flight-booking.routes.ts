@@ -9,6 +9,7 @@ import {LeaveComponentGuard} from '../shared/deactivation/leave-component-guard'
 import {FlightResolver} from './services/flight.resolver';
 import {AuthGuard} from '../shared/auth/auth.guard';
 import {FlightSearchReactiveComponent} from './flight-search-reactive/flight-search-reactive.component';
+import {FlightSearchMultistopComponent} from './flight-search-multistop/flight-search-multistop.component';
 
 
 const FLIGHT_BOOKING_ROUTES: Routes = [
@@ -34,6 +35,10 @@ const FLIGHT_BOOKING_ROUTES: Routes = [
       {
         path: 'flight-search-reactive',
         component: FlightSearchReactiveComponent
+      },
+      {
+        path: 'flight-search-multistop',
+        component: FlightSearchMultistopComponent
       },
       {
         path: 'passenger-search',

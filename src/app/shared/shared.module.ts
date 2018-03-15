@@ -15,7 +15,6 @@ import {CityReactiveValidatorDirective} from './validation/city-reactive.validat
 import {MultistopValidator} from './validation/multistop-validator';
 import {DateValueAccessorDirective} from './date/date-value.accessor';
 import {DateControlComponent} from './date/date.control';
-/*import { FormsModule } from '@angular/forms';*/
 
 @NgModule({
   imports: [
@@ -30,11 +29,9 @@ import {DateControlComponent} from './date/date.control';
     RoundTripDirective,
     CityReactiveValidatorDirective,
     DateValueAccessorDirective,
-    DateValueAccessorDirective,
     DateControlComponent
   ],
   providers: [
-    //{provide: AuthService, useClass: SimpleAuthService}
   ],
   exports: [
     CityPipe,
@@ -45,10 +42,7 @@ import {DateControlComponent} from './date/date.control';
     CityReactiveValidatorDirective,
     DateValueAccessorDirective,
     DateControlComponent
-  ]/*,
-  entryComponents: [
-    FlightBookingComponent]*/
-
+  ]
 })
 
 export class SharedModule {

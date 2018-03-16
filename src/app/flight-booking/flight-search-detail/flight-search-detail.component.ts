@@ -16,7 +16,7 @@ export class FlightSearchDetailComponent {
   to = 'Graz';
   flights: Array<Flight> = [];
   selectedFlight: Flight;
-  date: string = (new Date()).toISOString();
+  myModifiedDate: string = (new Date()).toISOString();
 
   basket: object = {
     "3": true,
@@ -24,7 +24,7 @@ export class FlightSearchDetailComponent {
     "5": true
   };
 
-  public myDate: string = (new Date()).toISOString();
+  // public myDate: string = (new Date()).toISOString();
 
   constructor(private http: Http) {
   }
